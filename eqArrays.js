@@ -12,8 +12,8 @@ const assertEqual = function(actual, expected) {
 const eqArrays = function(arr1, arr2) {
   let n = arr1.length;
   
-  if(n !== arr2.length) {
-    return false; 
+  if (n !== arr2.length) {
+    return false;
   }
 
   for (let i  = 0; i < n; i ++) {
@@ -23,7 +23,7 @@ const eqArrays = function(arr1, arr2) {
   }
 
   return true;
-}
+};
 
 
 
