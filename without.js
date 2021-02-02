@@ -41,17 +41,17 @@ const without = function(source, itemsToRemove) {
     if (itemsToRemoveMap.hasOwnProperty(elem) && elem === itemsToRemoveMap[elem]) {
       continue;
     } else {
-      res.push(elem)
+      res.push(elem);
     }
   }
 
-  return res
-}
+  return res;
+};
 
-assertArraysEqual(without([1, 2, 3], []),[1, 2, 3]) // if no elements to remove, should just return source
-assertArraysEqual(without([], [1,2,3]), []) // => if no elements in source, return empty source
-assertArraysEqual(without([1, 2, 3], [1]),[2, 3]) // => [2, 3]
-assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]) // => ["1", "2"]
+assertArraysEqual(without([1, 2, 3], []),[1, 2, 3]); // if no elements to remove, should just return source
+assertArraysEqual(without([], [1,2,3]), []); // => if no elements in source, return empty source
+assertArraysEqual(without([1, 2, 3], [1]),[2, 3]); // => [2, 3]
+assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]); // => ["1", "2"]
 
 const words = ["hello", "world", "lighthouse"];
 assertArraysEqual(without(words, ["lighthouse"]), ["hello", "world"]);

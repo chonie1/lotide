@@ -14,7 +14,6 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-// FUNCTION IMPLEMENTATION
 const assertArraysEqual = function(arr1, arr2) {
   if (eqArrays(arr1,arr2)) {
     console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
@@ -23,10 +22,28 @@ const assertArraysEqual = function(arr1, arr2) {
   }
 };
 
+const flatten = function(arr) {
 
+  if (!arr.length) {
+    return [];
+  }
 
-// assertArraysEqual([1, 2, 3], [1, 2, 3]);
-// assertArraysEqual([1, 2, 3], [3, 2, 1]);
-// assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
-// assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);
+  for (let elem of arr) {
+    if (Array.isArray(elem)) {
+      flatten(elem);
+    } else {
+      res.push(elem);
+    }
+  }
+
+  return res;
+
+};
+
+// Test Case
+let res = [];
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5,6]);
+res = [];
+assertArraysEqual(flatten(['',[]]), ['']);
+
 
