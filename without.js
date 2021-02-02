@@ -25,24 +25,18 @@ const assertArraysEqual = function(arr1, arr2) {
 
 const without = function(source, itemsToRemove) {
   
-  if (!itemsToRemove.length || !source.length) {
-    return source;
-  }
+  if (!itemsToRemove.length || !source.length) return source;
 
-  let itemsToRemoveMap = {};
+  let itemsToRemoveMap = new Map();
 
   for (let item of itemsToRemove) {
-    itemsToRemoveMap[item] = item;
+    itemsToRemoveMap.set(item, item);
   }
   
   let res = [];
   
   for (let elem of source) {
-    if (itemsToRemoveMap.hasOwnProperty(elem) && elem === itemsToRemoveMap[elem]) {
-      continue;
-    } else {
-      res.push(elem);
-    }
+    if (!itemsToRemoveMap.has(elem)) res.push(elem);
   }
 
   return res;

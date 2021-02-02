@@ -1,14 +1,10 @@
 const eqArrays = function(arr1, arr2) {
   let n = arr1.length;
   
-  if (n !== arr2.length) {
-    return false;
-  }
+  if (n !== arr2.length) return false;
 
   for (let i  = 0; i < n; i ++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
+    if (arr1[i] !== arr2[i]) return false;
   }
 
   return true;

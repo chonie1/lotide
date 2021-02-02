@@ -7,9 +7,7 @@ const assertEqual = function(actual, expected) {
 };
 
 const head = function(arr) {
-  if (!arr.length) {
-    return [];
-  }
+  if (!arr.length) return [];
 
   return arr[0];
 };
