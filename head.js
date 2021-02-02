@@ -8,8 +8,8 @@ const assertEqual = function(actual, expected) {
 };
 
 const head = function(arr) {
-  if (!arr) {
-    return;
+  if (!arr.length) {
+    return [];
   }
 
   return arr[0];
