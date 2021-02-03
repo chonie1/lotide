@@ -36,11 +36,11 @@ const res2 = findKey({
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.moon === 2); 
+}, x => x.moon === 2);
 assertEqual(res2, undefined);
 
 const res3 = findKey({
   "Blue Hill": { stars: 1, moon: 1},
   "Akaleri":   { stars: 3 },
-}, x => x.moon === 1); 
+}, x => x.moon === 1);
 assertEqual(res3, "Blue Hill");

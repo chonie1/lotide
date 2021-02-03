@@ -22,20 +22,26 @@ const assertArraysEqual = function(arr1, arr2) {
   }
 };
 
-const flatten = function(arr, res) {
+const flatten = function(arr) {
 
-  if (!arr.length) return [];
+  let res = [];
 
-  for (let elem of arr) {
-    if (Array.isArray(elem)) {
-      flatten(elem, res);
-    } else {
-      res.push(elem);
+  function flattenArr(arr) {
+    if (!arr.length) return res;
+
+    for (let elem of arr) {
+      if (Array.isArray(elem)) {
+        flattenArr(elem);
+      } else {
+        res.push(elem);
+      }
     }
+
+    return res;
   }
 
-  return res;
-
+  return flattenArr(arr);
+  
 };
 
 // Test Case
