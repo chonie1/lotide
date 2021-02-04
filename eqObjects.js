@@ -13,10 +13,8 @@ const eqArrays = function(arr1, arr2) {
   
   for (let i  = 0; i < n; i ++) {
     if (Array.isArray(arr1[i]) && Array.isArray(arr2[i])) {
-      if (arr1[i].length !== arr2[i].length) {
+      if (!eqArrays(arr1[i], arr2[i])) {
         return false;
-      }  else {
-        eqArrays(arr1[i], arr2[i]);
       }
     } else if (arr1[i] !== arr2[i]) {
       return false;
@@ -36,9 +34,9 @@ const eqObjects = function(object1, object2) {
 
   for (const key of keys1) {
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
-      return eqArrays(object1[key], object2[key]);
+      if (!eqArrays(object1[key], object2[key])) return false;
     } else if (typeof object1[key] === 'object' && typeof object2[key] === 'object') {
-      return eqObjects(object1[key], object2[key]);
+      if (!eqObjects(object1[key], object2[key])) return false;
     } else if (object1[key] !== object2[key]) {
       return false;
     }
