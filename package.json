@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@chonie1/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "a mini clone of lodash",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/chonie1/lotide.git"
   },
-  "author": "",
+  "author": "Connie Ho",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chonie1/lotide/issues"

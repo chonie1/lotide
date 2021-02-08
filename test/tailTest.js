@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const tail = require('../tail');
 
-describe('#test', ()=> {
+describe('#tail', ()=> {
   it('should return an empty array if the input is an empty array',()=>{
     assert.deepEqual(tail([]),[]);
   });

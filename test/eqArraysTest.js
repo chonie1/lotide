@@ -1,7 +1,12 @@
-const assertArraysEqual = require('../assertArraysEqual');
+const assert = require('chai').assert
 const eqArrays = require('../eqArrays');
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([1, 2, 3], [3, 2, 1]);
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);
+describe('eqArrays', ()=>{
+  it('should return true if all elements in the array are equal regardless of nesting',()=>{
+    const arr1 = [[1,[2,[3,4]]]]
+    const arr2 = [[1,[2,[3,4]]]]
+
+    assert.deepEqual(eqArrays(arr1,arr2),true)
+  })
+
+})
