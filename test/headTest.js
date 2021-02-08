@@ -2,12 +2,16 @@ const assert = require('chai').assert;
 const head = require('../head')
 
 describe('#head', () => {
-  it('returnss 1 for [1,2,3]', ()=>{
+  it('should return the first element of an array', ()=>{
     assert.strictEqual(head([1,2,3]),1);
   });
 
-  it("returns '5' for ['5']", () => {
+  it("should return the only element if the length is one", () => {
     assert.strictEqual(head(['5']), '5'); 
+  });
+
+  it("should return undefined if input is an empty array", () => {
+    assert.strictEqual(head([]), undefined); 
   });
 })
 
