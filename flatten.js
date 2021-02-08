@@ -20,7 +20,7 @@ const flatten = function(arr) {
   
 };
 
-module.exports = flatten
+module.exports = flatten;
 
 
 // Test Case

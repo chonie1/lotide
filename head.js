@@ -1,5 +1,5 @@
 const head = function(arr) {
-  if (!arr.length) return;
+  if (!arr.length) return null;
 
   return arr[0];
 };
